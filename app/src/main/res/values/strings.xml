@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Oficina Fácil</string>
+    <string name="welcome">Bem-vindo!</string>
+    <string name="access_your_account">Acesse sua conta</string>
+    <string name="email">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="forgot_password">Esqueci minha senha</string>
+    <string name="login">Entrar</string>
+    <string name="logo_description">Logo da oficina</string>
+
+    <string name="greeting">Olá, %1$s!</string>
+    <string name="follow_appointments">Acompanhe seus atendimentos</string>
+    <string name="appointment_in_progress">Atendimento em andamento</string>
+    <string name="view_appointment">Ver atendimento</string>
+    <string name="quick_access">Acesso rápido</string>
+    <string name="my_vehicles">Meus veículos</string>
+    <string name="history">Histórico</string>
+    <string name="budgets">Orçamentos</string>
+
+    <string name="my_profile">Meu perfil</string>
+    <string name="edit_profile">Editar perfil</string>
+    <string name="change_password">Alterar senha</string>
+    <string name="notifications_settings">Configurações de notificações</string>
+    <string name="logout">Sair da conta</string>
+
+    <string name="customers">Clientes</string>
+    <string name="search_customer">Buscar cliente</string>
+    <string name="new_customer">Novo cliente</string>
+    <string name="add_vehicle">Adicionar veículo</string>
+
+    <string name="budget">Orçamento</string>
+    <string name="valid_until">Válido até %1$s</string>
+    <string name="budget_items">Itens do orçamento</string>
+    <string name="total_value">Valor total</string>
+    <string name="approve_budget">Aprovar orçamento</string>
+    <string name="decline_budget">Recusar orçamento</string>
+
+    <string name="service_order">OS #%1$s</string>
+    <string name="in_progress">Em execução</string>
+    <string name="deadline">Prazo previsto: %1$s</string>
+    <string name="vehicle">Veículo</string>
+    <string name="reported_problem">Problema relatado</string>
+    <string name="diagnosis">Diagnóstico</string>
+    <string name="services">Serviços</string>
+
+    <string name="notifications">Notificações</string>
+    <string name="no_notifications">Você não possui novas notificações.</string>
+
+    <string name="approve_budget_question">Aprovar orçamento?</string>
+    <string name="confirm_approval">Confirmar aprovação</string>
+    <string name="back">Voltar</string>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/imgConfirmacao"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/ic_check"
+        android:contentDescription="Confirmação" />
+
+    <TextView
+        android:id="@+id/txtConfirmacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aprovar orçamento?"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#1F2937"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/txtResumo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Você está aprovando o orçamento #00045 no valor de R$ 850,00."
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="#6B7280"
+        android:layout_marginTop="12dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirmarAprovacao"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="CONFIRMAR APROVAÇÃO"
+        android:layout_marginTop="30dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancelarAprovacao"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="VOLTAR"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
