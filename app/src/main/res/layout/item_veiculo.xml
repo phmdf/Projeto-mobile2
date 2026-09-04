@@ -52,16 +52,37 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/txtItemAnoCor"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2022 • Prata"
-            android:textSize="12sp"
-            android:textColor="#2563EB"
-            android:background="#EFF6FF"
-            android:paddingHorizontal="8dp"
-            android:paddingVertical="4dp" />
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/txtItemAnoCor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2022 • Prata"
+                android:textSize="12sp"
+                android:textColor="#2563EB"
+                android:background="#EFF6FF"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp" />
+
+            <TextView
+                android:id="@+id/txtItemStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aguardando"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="#6B7280"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -11,10 +11,15 @@ public class Usuario {
     public String nome;
     public String email;
     public String senha;
+    public String cargo;
 
-    public Usuario(String nome, String email, String senha) {
+    public Usuario() {
+    }
+
+    public Usuario(String nome, String email, String senha, String cargo) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        this.cargo = cargo;
     }
 }

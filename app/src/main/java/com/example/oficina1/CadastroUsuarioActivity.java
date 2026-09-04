@@ -48,7 +48,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
             return;
         }
 
-        Usuario novoUsuario = new Usuario(nome, email, senha);
+        Usuario novoUsuario = new Usuario(nome, email, senha, "CLIENTE");
         AppDatabase.getInstance(this).usuarioDao().insert(novoUsuario);
 
         Toast.makeText(this, "Conta criada com sucesso!", Toast.LENGTH_SHORT).show();

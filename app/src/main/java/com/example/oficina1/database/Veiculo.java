@@ -12,11 +12,15 @@ public class Veiculo {
     public String placa;
     public String ano;
     public String cor;
+    public String status; // "Aguardando", "Em Manutenção", "Pronto", "Entregue"
+    public int clienteId;
 
-    public Veiculo(String modelo, String placa, String ano, String cor) {
+    public Veiculo(String modelo, String placa, String ano, String cor, String status, int clienteId) {
         this.modelo = modelo;
         this.placa = placa;
         this.ano = ano;
         this.cor = cor;
+        this.status = status;
+        this.clienteId = clienteId;
     }
 }

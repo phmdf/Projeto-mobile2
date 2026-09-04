@@ -11,8 +11,14 @@ public interface VeiculoDao {
     @Query("SELECT * FROM veiculos")
     List<Veiculo> getAll();
 
+    @Query("SELECT * FROM veiculos WHERE clienteId = :clienteId")
+    List<Veiculo> getByCliente(int clienteId);
+
     @Insert
     void insert(Veiculo veiculo);
+
+    @Query("UPDATE veiculos SET status = :status WHERE id = :id")
+    void updateStatus(int id, String status);
 
     @Delete
     void delete(Veiculo veiculo);

@@ -45,8 +45,13 @@ public class LoginActivity extends AppCompatActivity {
             SharedPreferences pref = getSharedPreferences("app_prefs", MODE_PRIVATE);
             pref.edit().putString("user_name", usuario.nome).apply();
             pref.edit().putInt("user_id", usuario.id).apply();
+            pref.edit().putString("user_role", usuario.cargo).apply();
 
-            startActivity(new Intent(this, DashboardActivity.class));
+            if ("GERENTE".equals(usuario.cargo)) {
+                startActivity(new Intent(this, AdminDashboardActivity.class));
+            } else {
+                startActivity(new Intent(this, DashboardActivity.class));
+            }
             finish();
         } else {
             Toast.makeText(this, "E-mail ou senha incorretos", Toast.LENGTH_SHORT).show();

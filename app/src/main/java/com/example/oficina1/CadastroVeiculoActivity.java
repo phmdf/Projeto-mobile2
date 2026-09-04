@@ -1,5 +1,6 @@
 package com.example.oficina1;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -37,7 +38,10 @@ public class CadastroVeiculoActivity extends AppCompatActivity {
             return;
         }
 
-        Veiculo veiculo = new Veiculo(modelo, placa, ano, cor);
+        SharedPreferences pref = getSharedPreferences("app_prefs", MODE_PRIVATE);
+        int userId = pref.getInt("user_id", -1);
+
+        Veiculo veiculo = new Veiculo(modelo, placa, ano, cor, "Aguardando", userId);
         AppDatabase.getInstance(this).veiculoDao().insert(veiculo);
 
         Toast.makeText(this, "Veículo salvo com sucesso!", Toast.LENGTH_SHORT).show();

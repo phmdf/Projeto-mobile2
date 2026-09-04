@@ -13,8 +13,19 @@ public class VeiculoAdapter extends RecyclerView.Adapter<VeiculoAdapter.VeiculoV
 
     private List<Veiculo> veiculos;
 
+    public interface OnVeiculoClickListener {
+        void onVeiculoClick(Veiculo veiculo);
+    }
+
+    private OnVeiculoClickListener listener;
+
     public VeiculoAdapter(List<Veiculo> veiculos) {
         this.veiculos = veiculos;
+    }
+
+    public VeiculoAdapter(List<Veiculo> veiculos, OnVeiculoClickListener listener) {
+        this.veiculos = veiculos;
+        this.listener = listener;
     }
 
     public void setVeiculos(List<Veiculo> veiculos) {
@@ -36,6 +47,11 @@ public class VeiculoAdapter extends RecyclerView.Adapter<VeiculoAdapter.VeiculoV
         holder.txtPlaca.setText(veiculo.placa);
         String anoCor = veiculo.ano + " • " + veiculo.cor;
         holder.txtAnoCor.setText(anoCor);
+        holder.txtStatus.setText(veiculo.status);
+
+        if (listener != null) {
+            holder.itemView.setOnClickListener(v -> listener.onVeiculoClick(veiculo));
+        }
     }
 
     @Override
@@ -44,13 +60,14 @@ public class VeiculoAdapter extends RecyclerView.Adapter<VeiculoAdapter.VeiculoV
     }
 
     static class VeiculoViewHolder extends RecyclerView.ViewHolder {
-        TextView txtModelo, txtPlaca, txtAnoCor;
+        TextView txtModelo, txtPlaca, txtAnoCor, txtStatus;
 
         public VeiculoViewHolder(@NonNull View itemView) {
             super(itemView);
             txtModelo = itemView.findViewById(R.id.txtItemModelo);
             txtPlaca = itemView.findViewById(R.id.txtItemPlaca);
             txtAnoCor = itemView.findViewById(R.id.txtItemAnoCor);
+            txtStatus = itemView.findViewById(R.id.txtItemStatus);
         }
     }
 }

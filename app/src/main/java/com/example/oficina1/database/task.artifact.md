@@ -1,0 +1,5 @@
+- [ ] Atualizar Usuario.java com campo cargo
+- [ ] Atualizar AppDatabase.java (versão e callback)
+- [ ] Atualizar CadastroUsuarioActivity.java
+- [ ] Atualizar LoginActivity.java
+- [ ] Verificar criação do gerente

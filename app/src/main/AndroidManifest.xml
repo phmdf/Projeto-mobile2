@@ -23,6 +23,11 @@
 
         <activity android:name=".LoginActivity" />
         <activity android:name=".DashboardActivity" />
+        <activity android:name=".AdminDashboardActivity" />
+        <activity android:name=".AdminVeiculosActivity" />
+        <activity android:name=".AdminOrcamentoActivity" />
+        <activity android:name=".AdminUsuariosActivity" />
+        <activity android:name=".AdminMensagensActivity" />
         <activity android:name=".PerfilActivity" />
         <activity android:name=".ClientesActivity" />
         <activity android:name=".VeiculosActivity" />
