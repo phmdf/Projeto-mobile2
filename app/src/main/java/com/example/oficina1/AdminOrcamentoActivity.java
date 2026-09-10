@@ -1,53 +1,73 @@
 package com.example.oficina1;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.Toast;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.example.oficina1.database.AppDatabase;
 import com.example.oficina1.database.Orcamento;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdminOrcamentoActivity extends AppCompatActivity {
 
-    private EditText edtVeiculoId, edtValor, edtDetalhes;
+    private OrcamentoAdapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_orcamento);
 
-        edtVeiculoId = findViewById(R.id.edtOrcamentoVeiculoId);
-        edtValor = findViewById(R.id.edtOrcamentoValor);
-        edtDetalhes = findViewById(R.id.edtOrcamentoDetalhes);
+        recyclerView = findViewById(R.id.recyclerAdminOrcamentos);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        findViewById(R.id.btnSalvarOrcamento).setOnClickListener(v -> salvar());
+        adapter = new OrcamentoAdapter(new ArrayList<>(), this::onOrcamentoClicked);
+        recyclerView.setAdapter(adapter);
+
+        findViewById(R.id.btnNovoOrcamentoToolbar).setOnClickListener(v -> 
+            startActivity(new Intent(this, CadastroOrcamentoActivity.class))
+        );
+
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbarAdminOrcamentos);
+        toolbar.setNavigationOnClickListener(v -> finish());
     }
 
-    private void salvar() {
-        String sVeiculoId = edtVeiculoId.getText().toString();
-        String sValor = edtValor.getText().toString();
-        String detalhes = edtDetalhes.getText().toString();
+    @Override
+    protected void onResume() {
+        super.onResume();
+        carregarOrcamentos();
+    }
 
-        if (sVeiculoId.isEmpty() || sValor.isEmpty()) {
-            Toast.makeText(this, "Preencha Veículo e Valor", Toast.LENGTH_SHORT).show();
-            return;
-        }
+    private void carregarOrcamentos() {
+        List<Orcamento> lista = AppDatabase.getInstance(this).orcamentoDao().getAll();
+        adapter.setOrcamentos(lista);
+    }
 
-        try {
-            int veiculoId = Integer.parseInt(sVeiculoId);
-            double valor = Double.parseDouble(sValor);
-            String data = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
+    private void onOrcamentoClicked(Orcamento orcamento) {
+        String[] opcoes = {"Aguardando", "Em Manutenção", "Pronto", "Entregue", "Recusado"};
 
-            Orcamento orcamento = new Orcamento(veiculoId, valor, "Pendente", detalhes, data);
-            AppDatabase.getInstance(this).orcamentoDao().insert(orcamento);
-
-            Toast.makeText(this, "Orçamento criado com sucesso!", Toast.LENGTH_SHORT).show();
-            finish();
-        } catch (NumberFormatException e) {
-            Toast.makeText(this, "Valor inválido", Toast.LENGTH_SHORT).show();
-        }
+        new AlertDialog.Builder(this)
+            .setTitle("Mudar Status do Orçamento")
+            .setItems(opcoes, (dialog, which) -> {
+                String novoStatus = opcoes[which];
+                
+                // Atualiza o orçamento
+                AppDatabase.getInstance(this).orcamentoDao().updateStatus(orcamento.id, novoStatus);
+                
+                // Atualiza o veículo associado (sincronização)
+                // Nota: "Recusado" não é um status padrão de veículo, mas podemos decidir o que fazer.
+                // Se for um dos status de veículo, atualizamos.
+                if (!novoStatus.equals("Recusado")) {
+                    AppDatabase.getInstance(this).veiculoDao().updateStatus(orcamento.veiculoId, novoStatus);
+                }
+                
+                Toast.makeText(this, "Status atualizado em ambos!", Toast.LENGTH_SHORT).show();
+                carregarOrcamentos();
+            })
+            .show();
     }
 }

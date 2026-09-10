@@ -21,6 +21,12 @@ public interface OrcamentoDao {
     @Update
     void update(Orcamento orcamento);
 
+    @Query("UPDATE orcamentos SET status = :status WHERE id = :id")
+    void updateStatus(int id, String status);
+
+    @Query("UPDATE orcamentos SET status = :status WHERE veiculoId = :veiculoId")
+    void updateStatusByVeiculo(int veiculoId, String status);
+
     @Delete
     void delete(Orcamento orcamento);
 }

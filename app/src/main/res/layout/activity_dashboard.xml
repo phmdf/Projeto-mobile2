@@ -4,15 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA">
+    android:background="#000000">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
         android:title="@string/app_name"
         android:titleTextColor="@android:color/white"
-        app:navigationIcon="@drawable/ic_menu" />
+        app:navigationIcon="@drawable/ic_menu"
+        app:navigationIconTint="@android:color/white" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,14 +34,14 @@
                 android:text="@string/greeting"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="#1F2937" />
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/follow_appointments"
                 android:textSize="14sp"
-                android:textColor="#6B7280"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="4dp" />
 
             <com.google.android.material.card.MaterialCardView
@@ -47,7 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                app:cardCornerRadius="14dp">
+                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="#1F2937">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -61,7 +64,7 @@
                         android:text="@string/appointment_in_progress"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        android:textColor="#6B7280" />
+                        android:textColor="@android:color/white" />
 
                     <TextView
                         android:id="@+id/txtNumeroOS"
@@ -70,7 +73,7 @@
                         android:text="OS #00125"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        android:textColor="#1F2937"
+                        android:textColor="@android:color/white"
                         android:layout_marginTop="8dp" />
 
                     <TextView
@@ -79,6 +82,7 @@
                         android:layout_height="wrap_content"
                         android:text="Honda Civic • ABC-1234"
                         android:textSize="15sp"
+                        android:textColor="@android:color/white"
                         android:layout_marginTop="4dp" />
 
                     <TextView
@@ -87,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:text="Em execução"
                         android:textStyle="bold"
-                        android:textColor="#2563EB"
+                        android:textColor="#60A5FA"
                         android:layout_marginTop="12dp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -106,7 +110,7 @@
                 android:text="@string/quick_access"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#1F2937"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="24dp" />
 
             <LinearLayout

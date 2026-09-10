@@ -14,8 +14,14 @@ public interface VeiculoDao {
     @Query("SELECT * FROM veiculos WHERE clienteId = :clienteId")
     List<Veiculo> getByCliente(int clienteId);
 
+    @Query("SELECT * FROM veiculos WHERE placa = :placa LIMIT 1")
+    Veiculo getByPlaca(String placa);
+
     @Insert
     void insert(Veiculo veiculo);
+
+    @androidx.room.Update
+    void update(Veiculo veiculo);
 
     @Query("UPDATE veiculos SET status = :status WHERE id = :id")
     void updateStatus(int id, String status);

@@ -26,6 +26,7 @@
         <activity android:name=".AdminDashboardActivity" />
         <activity android:name=".AdminVeiculosActivity" />
         <activity android:name=".AdminOrcamentoActivity" />
+        <activity android:name=".CadastroOrcamentoActivity" />
         <activity android:name=".AdminUsuariosActivity" />
         <activity android:name=".AdminMensagensActivity" />
         <activity android:name=".PerfilActivity" />

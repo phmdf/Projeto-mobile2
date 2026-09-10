@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA">
+    android:background="#000000">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,6 +15,7 @@
             android:id="@+id/toolbarAtendimento"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="#000000"
             android:title="@string/budget"
             android:titleTextColor="@android:color/white" />
 
@@ -27,7 +28,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="14dp">
+                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="#1F2937">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -42,7 +44,7 @@
                         android:text="OS #00125"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        android:textColor="#1F2937" />
+                        android:textColor="@android:color/white" />
 
                     <TextView
                         android:id="@+id/txtStatusOS"
@@ -51,7 +53,7 @@
                         android:text="@string/in_progress"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        android:textColor="#2563EB"
+                        android:textColor="#60A5FA"
                         android:layout_marginTop="8dp" />
 
                     <TextView
@@ -59,6 +61,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Prazo previsto: 05/09/2026"
+                        android:textColor="@android:color/white"
                         android:layout_marginTop="8dp" />
 
                 </LinearLayout>
@@ -71,6 +74,7 @@
                 android:text="@string/vehicle"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="22dp" />
 
             <TextView
@@ -79,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:text="Honda Civic 2022\nABC-1234\n120.450 km"
                 android:textSize="15sp"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="8dp" />
 
             <TextView
@@ -87,6 +92,7 @@
                 android:text="@string/reported_problem"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="22dp" />
 
             <TextView
@@ -94,6 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cliente informou ruído na parte dianteira."
+                android:textColor="@android:color/white"
                 android:layout_marginTop="8dp" />
 
             <TextView
@@ -102,6 +109,7 @@
                 android:text="@string/diagnosis"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="22dp" />
 
             <TextView
@@ -109,6 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Diagnóstico registrado pelo mecânico."
+                android:textColor="@android:color/white"
                 android:layout_marginTop="8dp" />
 
             <TextView
@@ -117,6 +126,7 @@
                 android:text="@string/services"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="22dp" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -131,6 +141,7 @@
                 android:text="@string/budget"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="20dp" />
 
             <TextView
@@ -140,6 +151,7 @@
                 android:text="Total: R$ 850,00"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:textColor="#34D399"
                 android:layout_marginTop="8dp" />
 
         </LinearLayout>

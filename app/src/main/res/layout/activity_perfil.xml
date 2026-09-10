@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA">
+    android:background="#000000">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,6 +15,7 @@
             android:id="@+id/toolbarPerfil"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="#000000"
             android:title="@string/my_profile"
             android:titleTextColor="@android:color/white" />
 
@@ -30,6 +31,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/ic_person"
+                app:tint="@android:color/white"
                 android:contentDescription="@string/my_profile" />
 
             <TextView
@@ -39,7 +41,7 @@
                 android:text="João da Silva"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="#1F2937"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="12dp" />
 
             <TextView
@@ -47,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="joao@email.com"
-                android:textColor="#6B7280"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="4dp" />
 
         </LinearLayout>
@@ -64,6 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="@string/change_password"
+            android:textColor="@android:color/white"
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_marginHorizontal="16dp" />
 
@@ -72,6 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="@string/notifications_settings"
+            android:textColor="@android:color/white"
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_margin="16dp" />
 
@@ -80,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="@string/logout"
-            android:textColor="#B91C1C"
+            android:textColor="#EF4444"
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="30dp" />

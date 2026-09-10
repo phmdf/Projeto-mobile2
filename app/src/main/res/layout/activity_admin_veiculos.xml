@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA">
+    android:background="#000000">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -13,6 +13,7 @@
             android:id="@+id/toolbarAdminVeiculos"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="#000000"
             app:title="Gestão de Veículos"
             app:titleTextColor="@android:color/white"
             app:navigationIcon="@drawable/ic_menu"
@@ -26,5 +27,15 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:padding="8dp"
         android:clipToPadding="false" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddVeiculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="Cadastrar Veículo"
+        android:src="@drawable/ic_add"
+        app:tint="@android:color/white" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

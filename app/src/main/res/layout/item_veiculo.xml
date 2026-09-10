@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     app:cardCornerRadius="12dp"
-    app:cardElevation="2dp">
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#1F2937">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,8 +22,8 @@
             android:src="@drawable/ic_oficina"
             android:padding="8dp"
             android:background="@drawable/ic_launcher_background"
-            android:backgroundTint="#E5E7EB"
-            app:tint="#2563EB"
+            android:backgroundTint="#374151"
+            app:tint="#60A5FA"
             android:contentDescription="Ícone de veículo" />
 
         <LinearLayout
@@ -39,7 +40,7 @@
                 android:text="Modelo do Carro"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#1F2937" />
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/txtItemPlaca"
@@ -47,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:text="ABC-1234"
                 android:textSize="14sp"
-                android:textColor="#6B7280"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="2dp" />
 
         </LinearLayout>
@@ -64,8 +65,8 @@
                 android:layout_height="wrap_content"
                 android:text="2022 • Prata"
                 android:textSize="12sp"
-                android:textColor="#2563EB"
-                android:background="#EFF6FF"
+                android:textColor="#93C5FD"
+                android:background="#1E3A8A"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="4dp" />
 
@@ -77,7 +78,7 @@
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
-                android:background="#6B7280"
+                android:background="@android:color/black"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="2dp"
                 android:layout_marginTop="4dp" />

@@ -26,15 +26,16 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
     @NonNull
     @Override
     public UsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_2, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_usuario, parent, false);
         return new UsuarioViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
         Usuario usuario = usuarios.get(position);
-        holder.text1.setText(usuario.nome + " (" + usuario.cargo + ")");
-        holder.text2.setText(usuario.email);
+        holder.txtNome.setText(usuario.nome);
+        holder.txtEmail.setText(usuario.email);
+        holder.txtCargo.setText(usuario.cargo);
         holder.itemView.setOnClickListener(v -> listener.onUsuarioClick(usuario));
     }
 
@@ -44,12 +45,13 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
     }
 
     static class UsuarioViewHolder extends RecyclerView.ViewHolder {
-        TextView text1, text2;
+        TextView txtNome, txtEmail, txtCargo;
 
         public UsuarioViewHolder(@NonNull View itemView) {
             super(itemView);
-            text1 = itemView.findViewById(android.R.id.text1);
-            text2 = itemView.findViewById(android.R.id.text2);
+            txtNome = itemView.findViewById(R.id.txtItemUsuarioNome);
+            txtEmail = itemView.findViewById(R.id.txtItemUsuarioEmail);
+            txtCargo = itemView.findViewById(R.id.txtItemUsuarioCargo);
         }
     }
 }

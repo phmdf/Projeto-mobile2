@@ -22,7 +22,7 @@
         android:text="@string/approve_budget_question"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#1F2937"
+        android:textColor="@android:color/black"
         android:layout_marginTop="20dp" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:text="Você está aprovando o orçamento #00045 no valor de R$ 850,00."
         android:textSize="16sp"
         android:gravity="center"
-        android:textColor="#6B7280"
+        android:textColor="@android:color/black"
         android:layout_marginTop="12dp" />
 
     <com.google.android.material.button.MaterialButton

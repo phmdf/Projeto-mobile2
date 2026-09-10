@@ -1,45 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#F5F7FA">
+    android:background="#000000">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mensagens e Fotos"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#1F2937"
-        android:layout_marginBottom="16dp" />
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
+        app:title="Mensagens e Fotos"
+        app:titleTextColor="@android:color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerMensagens"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+        android:padding="8dp"
+        android:background="#1F2937">
 
         <EditText
             android:id="@+id/edtMensagemTexto"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Escreva uma mensagem..." />
+            android:hint="Escreva uma mensagem..."
+            android:textColorHint="#9CA3AF"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            android:padding="8dp" />
 
         <ImageButton
             android:id="@+id/btnAnexarFoto"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/ic_add"
+            app:tint="@android:color/white"
             android:background="?attr/selectableItemBackgroundBorderless" />
 
         <ImageButton
@@ -47,6 +53,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/ic_check"
+            app:tint="@android:color/white"
             android:background="?attr/selectableItemBackgroundBorderless" />
 
     </LinearLayout>

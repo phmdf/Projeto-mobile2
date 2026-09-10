@@ -1,120 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
+    android:orientation="vertical"
+    android:padding="16dp"
     android:background="#000000">
 
     <TextView
-        android:id="@+id/txtTituloCadastro"
+        android:id="@+id/txtTituloCadastroOrcamento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Criar Conta"
-        android:textSize="26sp"
+        android:text="Novo Orçamento"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="40dp" />
+        android:layout_marginBottom="24dp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutNomeCadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome completo"
+        android:hint="Placa do Veículo"
         android:textColorHint="#9CA3AF"
         app:hintTextColor="@android:color/white"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        app:layout_constraintTop_toBottomOf="@id/txtTituloCadastro"
-        android:layout_marginTop="30dp">
+        android:layout_marginBottom="16dp">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtNomeCadastro"
+            android:id="@+id/edtOrcamentoPlaca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="textCapCharacters"
             android:textColor="@android:color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutEmailCadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-mail"
+        android:hint="Selecione o Serviço"
         android:textColorHint="#9CA3AF"
         app:hintTextColor="@android:color/white"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        app:layout_constraintTop_toBottomOf="@id/layoutNomeCadastro"
-        android:layout_marginTop="16dp">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtEmailCadastro"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_marginBottom="16dp">
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteServico"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:inputType="none"
             android:textColor="@android:color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutSenhaCadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Senha"
+        android:hint="Detalhes do Serviço"
         android:textColorHint="#9CA3AF"
         app:hintTextColor="@android:color/white"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/layoutEmailCadastro"
-        android:layout_marginTop="16dp">
+        android:layout_marginBottom="16dp">
+
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtSenhaCadastro"
+            android:id="@+id/edtOrcamentoDetalhes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:minLines="3"
             android:textColor="@android:color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutConfirmaSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Confirmar Senha"
+        android:hint="Valor Total (R$)"
         android:textColorHint="#9CA3AF"
         app:hintTextColor="@android:color/white"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/layoutSenhaCadastro"
-        android:layout_marginTop="16dp">
+        android:layout_marginBottom="24dp">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtConfirmaSenha"
+            android:id="@+id/edtOrcamentoValor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:inputType="numberDecimal"
             android:textColor="@android:color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCriarConta"
+        android:id="@+id/btnSalvarOrcamento"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="CRIAR MINHA CONTA"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/layoutConfirmaSenha"
-        android:layout_marginTop="32dp" />
+        android:text="Salvar Orçamento"
+        app:backgroundTint="#10B981" />
 
-    <TextView
-        android:id="@+id/btnVoltarLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Já tem conta? Faça Login"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/btnCriarConta"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:focusable="true" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

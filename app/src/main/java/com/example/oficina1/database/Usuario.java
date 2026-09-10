@@ -1,9 +1,10 @@
 package com.example.oficina1.database;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "usuarios")
+@Entity(tableName = "usuarios", indices = {@Index(value = {"email"}, unique = true)})
 public class Usuario {
     @PrimaryKey(autoGenerate = true)
     public int id;

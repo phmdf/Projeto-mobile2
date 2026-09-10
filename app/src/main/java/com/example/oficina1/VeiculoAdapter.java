@@ -49,6 +49,24 @@ public class VeiculoAdapter extends RecyclerView.Adapter<VeiculoAdapter.VeiculoV
         holder.txtAnoCor.setText(anoCor);
         holder.txtStatus.setText(veiculo.status);
 
+        // Mudar cor do status dinamicamente
+        int color;
+        switch (veiculo.status) {
+            case "Pronto":
+                color = 0xFF10B981; // Verde
+                break;
+            case "Entregue":
+                color = 0xFF6B7280; // Cinza (finalizado)
+                break;
+            case "Em Manutenção":
+                color = 0xFF3B82F6; // Azul
+                break;
+            default:
+                color = 0xFFF59E0B; // Laranja (Aguardando)
+                break;
+        }
+        holder.txtStatus.getBackground().setTint(color);
+
         if (listener != null) {
             holder.itemView.setOnClickListener(v -> listener.onVeiculoClick(veiculo));
         }

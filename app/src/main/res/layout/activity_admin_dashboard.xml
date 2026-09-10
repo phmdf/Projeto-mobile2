@@ -4,13 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA">
+    android:background="#000000">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbarAdmin"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#1F2937"
+        android:background="#000000"
         app:title="Painel Administrativo"
         app:titleTextColor="@android:color/white" />
 
@@ -32,14 +32,14 @@
                 android:text="Olá, Gerente!"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="#1F2937" />
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Controle total da oficina"
                 android:textSize="14sp"
-                android:textColor="#6B7280"
+                android:textColor="@android:color/white"
                 android:layout_marginTop="4dp" />
 
             <GridLayout
@@ -59,6 +59,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="#1F2937"
                     android:clickable="true"
                     android:focusable="true">
                     <LinearLayout
@@ -77,6 +78,7 @@
                             android:layout_height="wrap_content"
                             android:text="Veículos"
                             android:textStyle="bold"
+                            android:textColor="@android:color/white"
                             android:layout_marginTop="8dp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -89,6 +91,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="#1F2937"
                     android:clickable="true"
                     android:focusable="true">
                     <LinearLayout
@@ -107,11 +110,12 @@
                             android:layout_height="wrap_content"
                             android:text="Orçamentos"
                             android:textStyle="bold"
+                            android:textColor="@android:color/white"
                             android:layout_marginTop="8dp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Clientes e Perfis -->
+                <!-- Usuários -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardGestaoUsuarios"
                     android:layout_width="0dp"
@@ -119,6 +123,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="#1F2937"
                     android:clickable="true"
                     android:focusable="true">
                     <LinearLayout
@@ -137,6 +142,7 @@
                             android:layout_height="wrap_content"
                             android:text="Usuários"
                             android:textStyle="bold"
+                            android:textColor="@android:color/white"
                             android:layout_marginTop="8dp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -149,6 +155,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="#1F2937"
                     android:clickable="true"
                     android:focusable="true">
                     <LinearLayout
@@ -167,6 +174,7 @@
                             android:layout_height="wrap_content"
                             android:text="Mensagens"
                             android:textStyle="bold"
+                            android:textColor="@android:color/white"
                             android:layout_marginTop="8dp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
