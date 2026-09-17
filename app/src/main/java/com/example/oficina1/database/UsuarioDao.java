@@ -19,6 +19,12 @@ public interface UsuarioDao {
     @Query("SELECT * FROM usuarios WHERE email = :email COLLATE NOCASE LIMIT 1")
     Usuario getByEmail(String email);
 
+    @Query("SELECT * FROM usuarios WHERE id = :id LIMIT 1")
+    Usuario getById(int id);
+
     @Query("UPDATE usuarios SET cargo = :role WHERE id = :id")
     void updateRole(int id, String role);
+
+    @androidx.room.Update
+    void update(Usuario usuario);
 }

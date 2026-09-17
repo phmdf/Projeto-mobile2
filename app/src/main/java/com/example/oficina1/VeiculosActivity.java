@@ -1,6 +1,7 @@
 package com.example.oficina1;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -38,7 +39,15 @@ public class VeiculosActivity extends AppCompatActivity {
     }
 
     private void carregarVeiculos() {
-        List<Veiculo> lista = AppDatabase.getInstance(this).veiculoDao().getAll();
+        SharedPreferences pref = getSharedPreferences("app_prefs", MODE_PRIVATE);
+        int userId = pref.getInt("user_id", -1);
+        
+        List<Veiculo> lista;
+        if (userId != -1) {
+            lista = AppDatabase.getInstance(this).veiculoDao().getByCliente(userId);
+        } else {
+            lista = new ArrayList<>();
+        }
         adapter.setVeiculos(lista);
     }
 }

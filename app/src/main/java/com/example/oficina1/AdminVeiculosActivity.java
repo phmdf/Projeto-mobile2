@@ -47,10 +47,16 @@ public class AdminVeiculosActivity extends AppCompatActivity {
     }
 
     private void mostrarOpcoesVeiculo(Veiculo veiculo) {
+        String ownerName = "";
+        com.example.oficina1.database.Usuario owner = AppDatabase.getInstance(this).usuarioDao().getById(veiculo.clienteId);
+        if (owner != null) {
+            ownerName = " - Cliente: " + owner.nome;
+        }
+
         String[] opcoes = {"Criar Orçamento", "Mudar Status", "Editar", "Excluir"};
 
         new AlertDialog.Builder(this)
-            .setTitle("Veículo: " + veiculo.placa)
+            .setTitle("Veículo: " + veiculo.placa + ownerName)
             .setItems(opcoes, (dialog, which) -> {
                 switch (which) {
                     case 0: criarOrcamento(veiculo); break;
